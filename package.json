@@ -1,0 +1,17 @@
+{
+  "name": "@code.gov/about-page",
+  "version": "0.0.0",
+  "description": "About page component for code.gov",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSA/code-gov-components-about.git"
+  },
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/GSA/code-gov-components-about/issues"
+  },
+  "homepage": "https://github.com/GSA/code-gov-components-about#readme"
+}
