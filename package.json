@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "About page component for code.gov",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "convert": "node convert.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GSA/code-gov-components-about.git"
@@ -13,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GSA/code-gov-components-about/issues"
   },
-  "homepage": "https://github.com/GSA/code-gov-components-about#readme"
+  "homepage": "https://github.com/GSA/code-gov-components-about#readme",
+  "dependencies": {
+    "showdown": "^1.8.7"
+  }
 }
