@@ -3,7 +3,8 @@
 /* global fetch */
 import React, { Component, Fragment } from 'react'
 import { Link, NavLink, Redirect, Route, Switch } from 'react-router-dom'
-import { loadScript } from 'utils'
+import client from 'api-client'
+import { loadScript } from 'utils/other'
 import LazyHTML from 'components/lazy-html'
 import SiteBanner from 'components/site-banner'
 import SideNav from 'components/side-nav'
@@ -13,6 +14,42 @@ console.log("abouturl;", abouturl)
 
 const dataurl = ASSET_PATH + "assets/plugins/about-page/"
 console.log("dataurl:", dataurl)
+
+const onDashboard = ["DHS", "DOC", "DOD", "DOE", "DOI", "DOJ", "DOL", "DOS", "DOT", "ED", "EPA", "GSA", "HHS", "HUD", "NASA", "NRC", "OPM", "SBA", "SSA", "TREASURY", "USAID", "USDA", "VA"]
+
+const configJSON = {
+  scores: {
+    'compliant': [1, null],
+    'partial': [0.25, 0.9999999],
+    'noncompliant': [null, 0.244444444]
+  },
+  text: [
+    {
+      req: "agencyWidePolicy",
+      variants: {
+        compliant: "Agency policy is consistent with the Federal Source Code Policy.",
+        noncompliant: "Agency policy has not been reviewed for consistency with the Federal Source Code Policy.",
+        partial: "Agency policy is being updated for consistency with the Federal Source Code Policy."
+      }
+    },
+    {
+      req: "openSourceRequirement",
+      variants: {
+        compliant: "Agency has open sourced greater than 20% of their custom developed code.",
+        noncompliant: "Agency has open sourced less than 10% of their custom developed code.",
+        partial: "Agency has open sourced greater than 10% of their custom developed code."
+      }
+    },
+    {
+      req: "inventoryRequirement",
+      variants: {
+        compliant: "Agency has inventoried 100% of new custom code.",
+        noncompliant: "Agency has inventoried less than 50% of new custom code.",
+        partial: "Agency has inventoried more than 50% of new custom code."
+      }
+    }
+  ]
+};
 
 const links = [
   {
@@ -59,14 +96,25 @@ class ComplianceDashboard extends React.Component {
   constructor(props) {
     super(props)
     this.loading = false
+    this.state = {}
   }
 
   componentDidMount() {
+    console.log("compliance dashboard mounted")
     if (!this.loading) {
-      const webcomponent = customElements.get('json-schema')
+      const webcomponent = customElements.get('compliance-dashboard')
+      console.log("compliance-dashboard:", webcomponent)
       if (!webcomponent) {
-        loadScript(ASSET_PATH + 'json-schema-web-component.js')
+        loadScript(ASSET_PATH + 'webcomponents/compliance-dashboard.js', true)
       }
+      client.getCompliance().then(compliance => {
+        console.log("got compliance:", compliance)
+        compliance = compliance.filter(agency => onDashboard.includes(agency.acronym))
+        compliance.forEach(agency => {
+          agency.img = ASSET_PATH + `assets/img/logos/agencies/${agency.acronym}-50x50.png`
+        })
+        this.setState( { compliance })
+      })
     }
   }
 
@@ -74,11 +122,51 @@ class ComplianceDashboard extends React.Component {
     return (
       <Fragment>
         <LazyHTML url={`${dataurl}compliance/agency-compliance.html`}/>
-        <json-schema url={`${ASSET_PATH}assets/data/schema.json`}/>
+        <compliance-dashboard
+          id="compliance-dashboard"
+          config={JSON.stringify(configJSON)}
+          data={JSON.stringify(this.state.compliance)}
+        />
       </Fragment>
     )
   }
 }
+
+const Procurement = () => <LazyHTML url={`${dataurl}compliance/how-to-procure.html`}/>
+
+class InventoryCode extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.loading = false
+    this.state = {}
+  }
+
+  componentDidMount() {
+    console.log("compliance dashboard mounted")
+    if (!this.loading) {
+      this.loading = true
+      const webcomponent = customElements.get('json-schema')
+      console.log("json-schema:", webcomponent)
+      if (!webcomponent) {
+        loadScript(ASSET_PATH + 'webcomponents/json-schema.js', true)
+      }
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <LazyHTML url={`${dataurl}compliance/how-to-inventory-a.html`}/>
+        <json-schema url={ASSET_PATH + 'assets/data/schema.json'} />
+        <LazyHTML url={`${dataurl}compliance/how-to-inventory-b.html`}/>
+      </Fragment>
+    )
+  }
+}
+
+const OpenSourceIntroduction = () => <LazyHTML url={`${dataurl}open-source/introduction.html`}/>
+const Resources = () => <LazyHTML url={`${dataurl}open-source/resources.html`}/>
 
 const AboutPage = () => {
   return (
@@ -103,7 +191,14 @@ const AboutPage = () => {
             <Redirect from={`${abouturl}/overview`} to={`${abouturl}/overview/introduction`}/>
 
             <Route path={`${abouturl}/compliance/dashboard`} component={ComplianceDashboard}/>
+            <Route path={`${abouturl}/compliance/procurement`} component={Procurement}/>
+            <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
+            {/* need to add validator */}
             <Redirect from={`${abouturl}/compliance`} to={`${abouturl}/compliance/dashboard`}/>
+
+            <Route path={`${abouturl}/open-source/introduction`} component={OpenSourceIntroduction}/>
+            <Route path={`${abouturl}/open-sources/resources`} component={Resources}/>
+            <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
 
 
           </Switch>
