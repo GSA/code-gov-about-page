@@ -10,10 +10,8 @@ import SiteBanner from 'components/site-banner'
 import SideNav from 'components/side-nav'
 
 const abouturl = ASSET_PATH + 'about'
-console.log("abouturl;", abouturl)
 
 const dataurl = ASSET_PATH + "assets/plugins/about-page/"
-console.log("dataurl:", dataurl)
 
 const onDashboard = ["DHS", "DOC", "DOD", "DOE", "DOI", "DOJ", "DOL", "DOS", "DOT", "ED", "EPA", "GSA", "HHS", "HUD", "NASA", "NRC", "OPM", "SBA", "SSA", "TREASURY", "USAID", "USDA", "VA"]
 
@@ -70,8 +68,7 @@ const links = [
         text: 'How to Inventory',
         route: '/compliance/inventory-code',
         children: [
-          { text: 'Validate Schema', route: '/compliance/validate-schema' },
-          { text: 'Upgrade Schema', route: '/compliance/upgrade-schema' }
+          { text: 'Validate Schema', route: '/compliance/inventory-code/validate-schema' }
         ]
       },
     ]
@@ -91,7 +88,7 @@ const links = [
 const OverviewIntroduction = () => <LazyHTML url={`${dataurl}overview/introduction.html`}/>
 const OverviewTrackingProgress = () => <LazyHTML url={`${dataurl}overview/tracking-progress.html`}/>
 
-class ComplianceDashboard extends React.Component {
+class ComplianceDashboard extends Component {
 
   constructor(props) {
     super(props)
@@ -100,15 +97,12 @@ class ComplianceDashboard extends React.Component {
   }
 
   componentDidMount() {
-    console.log("compliance dashboard mounted")
     if (!this.loading) {
       const webcomponent = customElements.get('compliance-dashboard')
-      console.log("compliance-dashboard:", webcomponent)
       if (!webcomponent) {
         loadScript(ASSET_PATH + 'webcomponents/compliance-dashboard.js', true)
       }
       client.getCompliance().then(compliance => {
-        console.log("got compliance:", compliance)
         compliance = compliance.filter(agency => onDashboard.includes(agency.acronym))
         compliance.forEach(agency => {
           agency.img = ASSET_PATH + `assets/img/logos/agencies/${agency.acronym}-50x50.png`
@@ -134,7 +128,7 @@ class ComplianceDashboard extends React.Component {
 
 const Procurement = () => <LazyHTML url={`${dataurl}compliance/how-to-procure.html`}/>
 
-class InventoryCode extends React.Component {
+class InventoryCode extends Component {
 
   constructor(props) {
     super(props)
@@ -143,11 +137,9 @@ class InventoryCode extends React.Component {
   }
 
   componentDidMount() {
-    console.log("compliance dashboard mounted")
     if (!this.loading) {
       this.loading = true
       const webcomponent = customElements.get('json-schema')
-      console.log("json-schema:", webcomponent)
       if (!webcomponent) {
         loadScript(ASSET_PATH + 'webcomponents/json-schema.js', true)
       }
@@ -165,8 +157,40 @@ class InventoryCode extends React.Component {
   }
 }
 
-const OpenSourceIntroduction = () => <LazyHTML url={`${dataurl}open-source/introduction.html`}/>
-const Resources = () => <LazyHTML url={`${dataurl}open-source/resources.html`}/>
+class JSONValidator extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.loading = false
+    this.state = {}
+  }
+
+  componentDidMount() {
+    if (!this.loading) {
+      this.loading = true
+      const webcomponent = customElements.get('json-schema-validator')
+      if (!webcomponent) {
+        loadScript(ASSET_PATH + 'webcomponents/json-schema-validator.js', true)
+      }
+    }
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <h1>Code.json Validator</h1>
+        <p>Please enter your code.json file below in order to validate it correctly meets the specification.</p>
+        <json-schema-validator ajv={ASSET_PATH + 'external/ajv.min.js'} metaschema={ASSET_PATH + 'assets/data/json-schema-draft-04.json'} schema={ASSET_PATH + 'assets/data/schema.json'} />
+      </Fragment>
+    )
+  }
+}
+
+const OpenSourceIntroduction = () => <LazyHTML url={`${dataurl}open-source-pilot/introduction.html`}/>
+const Resources = () => <LazyHTML url={`${dataurl}open-source-pilot/tools-and-resources.html`}/>
+const MeasuringCode = () => <LazyHTML url={`${dataurl}open-source-pilot/how-to-measure-code.html`}/>
+const Licensing = () => <LazyHTML url={`${dataurl}open-source-pilot/licensing.html`}/>
+
 
 const AboutPage = () => {
   return (
@@ -192,14 +216,15 @@ const AboutPage = () => {
 
             <Route path={`${abouturl}/compliance/dashboard`} component={ComplianceDashboard}/>
             <Route path={`${abouturl}/compliance/procurement`} component={Procurement}/>
+            <Route path={`${abouturl}/compliance/inventory-code/validate-schema`} component={JSONValidator}/>
             <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
-            {/* need to add validator */}
             <Redirect from={`${abouturl}/compliance`} to={`${abouturl}/compliance/dashboard`}/>
 
             <Route path={`${abouturl}/open-source/introduction`} component={OpenSourceIntroduction}/>
-            <Route path={`${abouturl}/open-sources/resources`} component={Resources}/>
-            <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
-
+            <Route path={`${abouturl}/open-source/resources`} component={Resources}/>
+            <Route path={`${abouturl}/open-source/measuring-code`} component={MeasuringCode}/>
+            <Route path={`${abouturl}/open-source/licensing`} component={Licensing}/>
+            <Redirect from={`${abouturl}/open-source`} to={`${abouturl}/open-source/introduction`}/>
 
           </Switch>
         </div>
