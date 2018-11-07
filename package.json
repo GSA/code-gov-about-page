@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GSA/code-gov-components-about.git"
+    "url": "git+https://github.com/GSA/code-gov-about-page.git"
   },
   "author": "Daniel J. Dufour",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/GSA/code-gov-components-about/issues"
+    "url": "https://github.com/GSA/code-gov-about-page/issues"
   },
-  "homepage": "https://github.com/GSA/code-gov-components-about#readme",
+  "homepage": "https://github.com/GSA/code-gov-about-page#readme",
   "dependencies": {
     "showdown": "^1.8.7"
   }
