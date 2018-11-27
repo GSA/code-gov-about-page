@@ -10,6 +10,7 @@ import LazyHTML from 'components/lazy-html'
 import NavSelect from 'components/nav-select'
 import SiteBanner from 'components/site-banner'
 import SideNav from 'components/side-nav'
+import { refreshView, scrollToTopOfResults } from 'utils/other'
 
 const abouturl = PUBLIC_PATH + 'about'
 
@@ -213,48 +214,64 @@ const MeasuringCode = () => <LazyHTML url={`${dataurl}open-source-pilot/how-to-m
 const Licensing = () => <LazyHTML url={`${dataurl}open-source-pilot/licensing.html`}/>
 
 
-const AboutPage = () => {
-  return (
-    <div>
-      <SiteBanner title='ABOUT' />
-      <Breadcrumbs crumbs={[
-        { text: 'Home', to: '/' },
-        { text: 'About' }
-      ]}/>
-      <br/>
-      <div className='indented'>
-        <div className='show-w-lte-600' style={{padding: '30px', textAlign: 'center'}}>
-          <NavSelect pages={pagesForSelect} />
+class AboutPage extends Component {
+
+  componentDidMount() {
+    refreshView()
+  }
+
+  onNavChange() {
+    scrollToTopOfResults()
+  }
+
+  render() {
+    return (
+      <div>
+        <SiteBanner title='ABOUT' />
+        <Breadcrumbs crumbs={[
+          { text: 'Home', to: '/' },
+          { text: 'About' }
+        ]}/>
+        <br/>
+        <div className='indented'>
+          <div className='show-w-lte-600' style={{padding: '30px', textAlign: 'center'}}>
+            <NavSelect pages={pagesForSelect} />
+          </div>
+          <div className='width-quarter show-w-gt-600'>
+            <SideNav
+              alignment='left'
+              baseurl={abouturl}
+              links={links}
+              onLinkClick={::this.onNavChange}
+            />
+          </div>
+          <div className='docs-content'>
+            <Switch>
+
+              <Route path={`${abouturl}/overview/introduction`} component={OverviewIntroduction}/>
+              <Route path={`${abouturl}/overview/tracking-progress`} component={OverviewTrackingProgress}/>
+              <Redirect from={`${abouturl}/overview`} to={`${abouturl}/overview/introduction`}/>
+
+              <Route path={`${abouturl}/compliance/dashboard`} component={ComplianceDashboard}/>
+              <Route path={`${abouturl}/compliance/procurement`} component={Procurement}/>
+              <Route path={`${abouturl}/compliance/inventory-code/validate-schema`} component={JSONValidator}/>
+              <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
+              <Redirect from={`${abouturl}/compliance`} to={`${abouturl}/compliance/dashboard`}/>
+
+              <Route path={`${abouturl}/open-source/introduction`} component={OpenSourceIntroduction}/>
+              <Route path={`${abouturl}/open-source/resources`} component={Resources}/>
+              <Route path={`${abouturl}/open-source/measuring-code`} component={MeasuringCode}/>
+              <Route path={`${abouturl}/open-source/licensing`} component={Licensing}/>
+              <Redirect from={`${abouturl}/open-source`} to={`${abouturl}/open-source/introduction`}/>
+
+            </Switch>
+          </div>
         </div>
-        <div className='width-quarter show-w-gt-600'>
-          <SideNav alignment='left' baseurl={abouturl} links={links} />
-        </div>
-        <div className='docs-content'>
-          <Switch>
-
-            <Route path={`${abouturl}/overview/introduction`} component={OverviewIntroduction}/>
-            <Route path={`${abouturl}/overview/tracking-progress`} component={OverviewTrackingProgress}/>
-            <Redirect from={`${abouturl}/overview`} to={`${abouturl}/overview/introduction`}/>
-
-            <Route path={`${abouturl}/compliance/dashboard`} component={ComplianceDashboard}/>
-            <Route path={`${abouturl}/compliance/procurement`} component={Procurement}/>
-            <Route path={`${abouturl}/compliance/inventory-code/validate-schema`} component={JSONValidator}/>
-            <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
-            <Redirect from={`${abouturl}/compliance`} to={`${abouturl}/compliance/dashboard`}/>
-
-            <Route path={`${abouturl}/open-source/introduction`} component={OpenSourceIntroduction}/>
-            <Route path={`${abouturl}/open-source/resources`} component={Resources}/>
-            <Route path={`${abouturl}/open-source/measuring-code`} component={MeasuringCode}/>
-            <Route path={`${abouturl}/open-source/licensing`} component={Licensing}/>
-            <Redirect from={`${abouturl}/open-source`} to={`${abouturl}/open-source/introduction`}/>
-
-          </Switch>
-        </div>
+        <br/>
+        <br/>
       </div>
-      <br/>
-      <br/>
-    </div>
-  )
+    )
+  }
 }
 
 export default AboutPage
