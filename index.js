@@ -55,7 +55,7 @@ const configJSON = {
 const links = [
   {
     text: 'Overview',
-    route: '/overview',
+    route: '/overview/introduction',
     children: [
       { text: 'Introduction', route: '/overview/introduction' },
       { text: 'Tracking Progress', route: '/overview/tracking-progress' }
@@ -63,7 +63,7 @@ const links = [
   },
   {
     text: 'Compliance',
-    route: '/compliance',
+    route: '/compliance/dashboard',
     children: [
       { text: 'Agency Compliance', route: '/compliance/dashboard' },
       { text: 'How to Procure Software', route: '/compliance/procurement' },
@@ -78,7 +78,7 @@ const links = [
   },
   {
     text: 'Open Source Pilot',
-    route: '/open-source',
+    route: '/open-source/introduction',
     children: [
       { text: 'Introduction', route: '/open-source/introduction' },
       { text: 'Tools and Resources', route: '/open-source/resources' },
@@ -218,6 +218,11 @@ class AboutPage extends Component {
 
   componentDidMount() {
     refreshView()
+    window.addEventListener('popstate', event => {
+      if (window.location.pathname.startsWith(abouturl)) {
+        scrollToTopOfResults()
+      }
+    })
   }
 
   onNavChange() {
