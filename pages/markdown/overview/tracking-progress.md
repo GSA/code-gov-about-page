@@ -7,7 +7,7 @@
 Generally, OMB's approach to assessing agency progress in meeting the Federal Source Code Policy's requirements can be broken into two categories:
 
 1.  analysis of agencies' enterprise code inventories, individual code repositories, and open sourced code, with a
-2.  (2) comparison of that information against overall operational and financial data already collected by OMB.
+2.  comparison of that information against overall operational and financial data already collected by OMB.
 
 OMB will provide additional information about its assessment mechanisms over time.
 
