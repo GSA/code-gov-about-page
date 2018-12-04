@@ -1,18 +1,14 @@
 ## Example code.json file
 
-We’ve created a [sample code.json](https://github.com/presidential-innovation-fellows/code-gov-web/blob/master/src/assets/sample_code_200.json).
+We've created some [good metadata examples](https://github.com/GSA/code-gov/blob/master/METADATA_EXAMPLES.md)
 
 ## Tools
 
-*   <a class="default-link" routerlink="/policy-guide/docs/compliance/inventory-code/tools/validate-schema">Schema Validator</a>
+*   <a class="default-link" href="https://code.gov/about/compliance/inventory-code/validate-schema">Schema Validator</a>
 
-    A tool for validating your code.json against either the v1.0.1 or v2.0.0 schemas. After entering in your code.json, it will list and highlight issues and provide a full featured code editor for making changes to the file.
+    A tool for validating your code.json against v2.0.0 schemas. After entering in your code.json, it will list and highlight issues and provide a JSON editor for making changes to the file.
 
-*   <a class="default-link" routerlink="/policy-guide/docs/compliance/inventory-code/tools/upgrade-schema">v1.0.1 to v2.0.0 Schema Upgrader</a>
-
-    The upgrader takes a valid v1.0.1 code.json and performs as many automatic upgrades as it can. It also adds additional fields to the JSON to serve as templates for adding more information about your repositories.
-
-## [Changelog](https://github.com/presidential-innovation-fellows/code-gov-web/blob/master/CHANGELOG.md)
+## [Changelog](https://github.com/GSA/code-gov-data/blob/master/CHANGELOG.md)
 
 ### August 2017 - Version 2.0.0
 
@@ -46,14 +42,4 @@ This revision includes revisions to incorporate the open source measurement requ
 *   'governmentWideReuseProject'
 *   'exemption' - now included within the enumerated usageType options in the 'permissions' object.
 
-### December 2016 - Version 1.0.1
-
-This revision includes minor tweaks that are aimed at clarifying certain fields and increasing the overall utility of the schema content.
-
-#### Changes in v1.0.1
-
-*   'version': The first official iteration of the code.gov metadata schema will be version 1.0.1\. Adding a version number to the schema makes it easier to track and manage changes between versions of the metadata schema.
-*   ‘organization’: The ‘organization’ field, which holds the name of the sub-agency responsible for a particular repository or release, is now optional. It has also been moved into the ‘releases’ object. This enables agencies to identify the appropriate organization that owns the repository within the agency.
-*   ‘releases’: This guide previously referred to a ‘release’ field in the metadata schema, while the sample code.json referred to the plural form ‘releases’. This guide has been updated to refer to the plural form ‘releases’.
-*   ‘repository’: The link to the open source repository will be considered a required field for all open source repositories. For repositories that are only available as government-wide reuse or are closed, pursuant to one of the exemptions, this field is not required.
-*   ‘exemptionText’: This field allows agencies to provide a brief narrative explanation for the exception requested in the 'exemption' field.
+Previous schema revisions found in [Changelog](https://github.com/GSA/code-gov-data/blob/master/schemas/CHANGELOG.md)

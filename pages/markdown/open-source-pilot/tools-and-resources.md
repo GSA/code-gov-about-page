@@ -8,7 +8,7 @@ Agencies can use the list of tools and resources provided here to become more fl
 
 **Important:** the tools and resources outlined here are not mandatory for agency use and are not endorsed by any part of the government. The purpose of this page is to provide broader context for agencies and to provide perspective into the breadth of tools available. Also, this list does not attempt to be exhaustive on any topic; new tools are constantly being developed and practices are constantly evolving.
 
-Individuals and companies that want to suggest tools for inclusion here can do so by opening an Issue or creating a Pull Request on the [Code.gov repository.](https://github.com/presidential-innovation-fellows/code-gov-web)
+Individuals and companies that want to suggest tools for inclusion here can do so by opening an Issue or creating a Pull Request on the [Code.gov repository.](https://github.com/GSA/code-gov-front-end)
 
 ## Choosing a Version Control System
 
@@ -31,11 +31,11 @@ A number of paid and free tools exist that agencies can use as part of their dev
 
 Increasingly, these tools can be configured to reflect the specific security policies of your agency and can be integrated directly into your agency's developer workflow, scanning code automatically whenever code is committed or pushed for passwords, keys, watchwords, and other potentially sensitive information. Some tools also provide broader capabilities related to coding standards and quality. In developing its overall source code strategy, your agency may want to consider integrating these kinds of tools into your developer workflow, contractually require their use by vendors, or use them to assess the quality and security of deliverables prior to accepting receipt.
 
-We are soliciting input from the development community in building out a list of tools. Agencies should feel free to join the conversation, make suggestions, and ask questions on the [open Issue on the code.gov repository](https://github.com/presidential-innovation-fellows/code-gov-web/issues/101).
+We are soliciting input from the development community in building out a list of tools. Agencies should feel free to join the conversation, make suggestions, and ask questions on the [open Issue on the code.gov repository](https://github.com/GSA/code-gov-front-end/issues).
 
 ## Development practices for government
 
-A number of communities of practice exist that agency staff can use to keep abreast of open source inside and outside of government, to raise questions, and to share their experiences. 
+A number of communities of practice exist that agency staff can use to keep abreast of open source inside and outside of government, to raise questions, and to share their experiences.
 
 *   Open Source Listserv (GSA, open to government only)
 *   Security Listserv (GSA, open to government only)

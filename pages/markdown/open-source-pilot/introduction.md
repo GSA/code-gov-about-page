@@ -1,10 +1,10 @@
 # Introduction - Building Your Agency's Open Source Practice
 
-[Section 5 of the Federal Source Code Policy](/#!/policy-guide/policy/open-source) outlines an Open Source Pilot Program that requires the release of a portion of Federal source code over three years. This section of code.gov provides advice for agencies in satisfying the requirements of the pilot.
+[Section 5 of the Federal Source Code Policy](https://code.gov/policy-guide/open-source) outlines an Open Source Pilot Program that requires the release of a portion of Federal source code over three years. This section of code.gov provides advice for agencies in satisfying the requirements of the pilot.
 
 The open source practice for the U.S. government is expected to rapidly evolve and become more sophisticated over the next several years, so the advice provided here will also evolve.
 
-In addition to the requirements outline in [Section 5](/#!/policy-guide/policy/open-source) of the policy, [Section 7.1](#roles-and-responsibilities) of the policy discusses roles and responsibilities within agencies in meeting the requirements of the policy. Regarding the Open Source Pilot Program specifically, it notes that:
+In addition to the requirements outline in [Section 5](https://code.gov/policy-guide/open-source) of the policy, [Section 7.1](#roles-and-responsibilities) of the policy discusses roles and responsibilities within agencies in meeting the requirements of the policy. Regarding the Open Source Pilot Program specifically, it notes that:
 
 > Agencies should strengthen internal capacity to efficiently and securely deliver OSS as part of regular operations.
 
