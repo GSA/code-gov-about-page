@@ -10,7 +10,7 @@ import LazyHTML from 'components/lazy-html'
 import NavSelect from 'components/nav-select'
 import SiteBanner from 'components/site-banner'
 import SideNav from 'components/side-nav'
-import { refreshView, scrollToTopOfResults } from 'utils/other'
+import { refreshView,scrollToTopOfResults } from 'utils/other'
 
 const abouturl = PUBLIC_PATH + 'about'
 
@@ -242,7 +242,7 @@ class AboutPage extends Component {
           <div className='show-w-lte-600' style={{padding: '30px', textAlign: 'center'}}>
             <NavSelect pages={pagesForSelect} />
           </div>
-          <div className='width-quarter show-w-gt-600'>
+          <div className='width-quarter show-w-gt-600 sticky' >
             <SideNav
               alignment='left'
               baseurl={abouturl}
