@@ -10,11 +10,7 @@ import LazyHTML from 'components/lazy-html'
 import NavSelect from 'components/nav-select'
 import SiteBanner from 'components/site-banner'
 import SideNav from 'components/side-nav'
-import {
-  refreshView,
-  scrollToTopOfResults,
-  getHeaderNavHeight
-} from 'utils/other'
+import { refreshView,scrollToTopOfResults } from 'utils/other'
 
 const abouturl = PUBLIC_PATH + 'about'
 
@@ -234,8 +230,6 @@ class AboutPage extends Component {
   }
 
   render() {
-    const topHeight = getHeaderNavHeight()
-
     return (
       <div>
         <SiteBanner title='ABOUT' />
