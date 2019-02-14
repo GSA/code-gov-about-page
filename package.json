@@ -1,6 +1,6 @@
 {
   "name": "@code.gov/about-page",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "About page component for code.gov",
   "main": "index.js",
   "scripts": {
