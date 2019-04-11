@@ -42,4 +42,4 @@ A number of communities of practice exist that agency staff can use to keep abre
 *   Digital Service Listserv (GSA, open to government only)
 *   [Github for Government Community](https://github.com/government/welcome#readme) (Not an official Government service)
 
-As a quick reminder, agency staff must comply with applicable law and regulations and should obtain the appropriate agency approvals prior to using any of the tools ans services discussed here.
+As a quick reminder, agency staff must comply with applicable law and regulations and should obtain the appropriate agency approvals prior to using any of the tools and services discussed here.
