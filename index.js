@@ -16,7 +16,7 @@ const abouturl = PUBLIC_PATH + 'about'
 
 const dataurl = PUBLIC_PATH + 'assets/plugins/about-page/'
 
-const onDashboard = ['DHS', 'DOC', 'DOD', 'DOE', 'DOI', 'DOJ', 'DOL', 'DOS', 'DOT', 'ED', 'EPA', 'GSA', 'HHS', 'HUD', 'NASA', 'NRC', 'OPM', 'SBA', 'SSA', 'TREASURY', 'USAID', 'USDA', 'VA']
+const onDashboard = ['DHS', 'DOC', 'DOD', 'DOE', 'DOI', 'DOJ', 'DOL', 'DOS', 'DOT', 'ED', 'EPA', 'GSA', 'HHS', 'HUD', 'NASA', 'NRC', 'NSF', 'OPM', 'SBA', 'SSA', 'TREASURY', 'USAID', 'USDA', 'VA']
 
 const configJSON = {
   scores: {
