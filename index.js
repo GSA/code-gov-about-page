@@ -280,3 +280,8 @@ class AboutPage extends Component {
 }
 
 export default AboutPage
+export {
+  ComplianceDashboard,
+  InventoryCode,
+  JSONValidator
+}
