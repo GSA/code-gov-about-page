@@ -19,7 +19,7 @@ You may want to view your content changes in the code-gov-about-page repo on you
 2. Run `npm install` to install the dependencies required for the package in the `code-gov-about-page` directory.
 3. Run `npm link` in the root level of the `code-gov-about-page` directory on your local machine.
 4. On the `code-gov-front-end` [project](https://github.com/GSA/code-gov-front-end#getting-started), clone the repository and run `npm install` if you haven’t done this already.
-5. Run `npm link @code.gov/code-gov-about-page` in the root level of the code-gov-front-end directory on your local machine.
+5. Run `npm link @code.gov/about-page` in the root level of the code-gov-front-end directory on your local machine.
 
 You are now using the latest version of the code.gov About page section via your cloned version when running the `code-gov-front-end` site on your local machine. To stop using this version, run `npm unlink @code.gov/code-gov-about-page` from the root level of the `code-gov-front-end` directory.
 
