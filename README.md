@@ -1,5 +1,5 @@
 # code-gov-about-page
-About page component for code.gov
+Component for the [About](https://code.gov/about/overview/introduction) page on code.gov.
 
 ## Install
 
@@ -22,3 +22,11 @@ You may want to view your content changes in the code-gov-about-page repo on you
 5. Run `npm link @code.gov/code-gov-about-page` in the root level of the code-gov-front-end directory on your local machine.
 
 You are now using the latest version of the code.gov About page section via your cloned version when running the `code-gov-front-end` site on your local machine. To stop using this version, run `npm unlink @code.gov/code-gov-about-page` from the root level of the `code-gov-front-end` directory.
+
+## Public domain
+
+This project is in the worldwide [public domain](LICENSE.md).
+
+> This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+>
+> All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
