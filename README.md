@@ -33,6 +33,9 @@ This project is in the worldwide [public domain](LICENSE.md).
 
 ## Questions?
 Twitter: @CodeDotGov
+
 Email: code@gsa.gov
+
 LinkedIn: code-gov
+
 Join our #opensource-public Slack channel: https://chat.18f.gov/
