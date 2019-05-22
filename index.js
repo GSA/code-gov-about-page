@@ -213,7 +213,6 @@ const Resources = () => <LazyHTML url={`${dataurl}open-source-pilot/tools-and-re
 const MeasuringCode = () => <LazyHTML url={`${dataurl}open-source-pilot/how-to-measure-code.html`}/>
 const Licensing = () => <LazyHTML url={`${dataurl}open-source-pilot/licensing.html`}/>
 
-
 class AboutPage extends Component {
 
   componentDidMount() {
@@ -283,5 +282,12 @@ export default AboutPage
 export {
   ComplianceDashboard,
   InventoryCode,
-  JSONValidator
+  JSONValidator,
+  OverviewIntroduction,
+  OverviewTrackingProgress,
+  OpenSourceIntroduction,
+  Resources,
+  MeasuringCode,
+  Licensing,
+  Procurement,
 }
