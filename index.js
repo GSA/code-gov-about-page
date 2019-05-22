@@ -102,7 +102,7 @@ const pagesForSelect = [
 ]
 .map(({display, route}) => ({display, route: abouturl + route}))
 
-const OverviewIntroduction = <LazyHTML url={`${dataurl}overview/introduction.html`}/>
+const OverviewIntroduction = () => <LazyHTML url={`${dataurl}overview/introduction.html`}/>
 const OverviewTrackingProgress = () => <LazyHTML url={`${dataurl}overview/tracking-progress.html`}/>
 
 class ComplianceDashboard extends Component {
@@ -253,7 +253,7 @@ class AboutPage extends Component {
           <div className='docs-content'>
             <Switch>
 
-              <Route path={`${abouturl}/overview/introduction`} component={() => <OverviewIntroduction />}/>
+              <Route path={`${abouturl}/overview/introduction`} component={OverviewIntroduction}/>
               <Route path={`${abouturl}/overview/tracking-progress`} component={OverviewTrackingProgress}/>
               <Redirect from={`${abouturl}/overview`} to={`${abouturl}/overview/introduction`}/>
 
