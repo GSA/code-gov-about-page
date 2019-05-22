@@ -143,7 +143,7 @@ class ComplianceDashboard extends Component {
   }
 }
 
-const Procurement = () => <LazyHTML url={`${dataurl}compliance/how-to-procure.html`}/>
+const Procurement = <LazyHTML url={`${dataurl}compliance/how-to-procure.html`}/>
 
 class InventoryCode extends Component {
 
@@ -252,20 +252,20 @@ class AboutPage extends Component {
           <div className='docs-content'>
             <Switch>
 
-              <Route path={`${abouturl}/overview/introduction`} component={OverviewIntroduction}/>
-              <Route path={`${abouturl}/overview/tracking-progress`} component={OverviewTrackingProgress}/>
+              <Route path={`${abouturl}/overview/introduction`} component={() => OverviewIntroduction}/>
+              <Route path={`${abouturl}/overview/tracking-progress`} component={() => OverviewTrackingProgress}/>
               <Redirect from={`${abouturl}/overview`} to={`${abouturl}/overview/introduction`}/>
 
               <Route path={`${abouturl}/compliance/dashboard`} component={ComplianceDashboard}/>
-              <Route path={`${abouturl}/compliance/procurement`} component={Procurement}/>
+              <Route path={`${abouturl}/compliance/procurement`} component={() => Procurement}/>
               <Route path={`${abouturl}/compliance/inventory-code/validate-schema`} component={JSONValidator}/>
               <Route path={`${abouturl}/compliance/inventory-code`} component={InventoryCode}/>
               <Redirect from={`${abouturl}/compliance`} to={`${abouturl}/compliance/dashboard`}/>
 
-              <Route path={`${abouturl}/open-source/introduction`} component={OpenSourceIntroduction}/>
-              <Route path={`${abouturl}/open-source/resources`} component={Resources}/>
-              <Route path={`${abouturl}/open-source/measuring-code`} component={MeasuringCode}/>
-              <Route path={`${abouturl}/open-source/licensing`} component={Licensing}/>
+              <Route path={`${abouturl}/open-source/introduction`} component={() => OpenSourceIntroduction}/>
+              <Route path={`${abouturl}/open-source/resources`} component={() => Resources}/>
+              <Route path={`${abouturl}/open-source/measuring-code`} component={() => MeasuringCode}/>
+              <Route path={`${abouturl}/open-source/licensing`} component={() => Licensing}/>
               <Redirect from={`${abouturl}/open-source`} to={`${abouturl}/open-source/introduction`}/>
 
             </Switch>
