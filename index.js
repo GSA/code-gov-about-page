@@ -102,8 +102,8 @@ const pagesForSelect = [
 ]
 .map(({display, route}) => ({display, route: abouturl + route}))
 
-const OverviewIntroduction = () => <LazyHTML url={`${dataurl}overview/introduction.html`}/>
-const OverviewTrackingProgress = () => <LazyHTML url={`${dataurl}overview/tracking-progress.html`}/>
+const OverviewIntroduction = <LazyHTML url={`${dataurl}overview/introduction.html`}/>
+const OverviewTrackingProgress = <LazyHTML url={`${dataurl}overview/tracking-progress.html`}/>
 
 class ComplianceDashboard extends Component {
 
@@ -208,11 +208,10 @@ class JSONValidator extends React.Component {
   }
 }
 
-const OpenSourceIntroduction = () => <LazyHTML url={`${dataurl}open-source-pilot/introduction.html`}/>
-const Resources = () => <LazyHTML url={`${dataurl}open-source-pilot/tools-and-resources.html`}/>
-const MeasuringCode = () => <LazyHTML url={`${dataurl}open-source-pilot/how-to-measure-code.html`}/>
-const Licensing = () => <LazyHTML url={`${dataurl}open-source-pilot/licensing.html`}/>
-
+const OpenSourceIntroduction = <LazyHTML url={`${dataurl}open-source-pilot/introduction.html`}/>
+const Resources = <LazyHTML url={`${dataurl}open-source-pilot/tools-and-resources.html`}/>
+const MeasuringCode = <LazyHTML url={`${dataurl}open-source-pilot/how-to-measure-code.html`}/>
+const Licensing = <LazyHTML url={`${dataurl}open-source-pilot/licensing.html`}/>
 
 class AboutPage extends Component {
 
