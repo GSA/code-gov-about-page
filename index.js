@@ -289,5 +289,5 @@ export {
   Resources,
   MeasuringCode,
   Licensing,
-  Procurement,
+  Procurement
 }
