@@ -2,7 +2,7 @@
 
 ## Overview
 
-Section [7.2](#code-inventories-and-discovery) and [7.3](#codegov) of the Source Code Policy require agencies to provide an inventory of their 'custom-developed code' to support government-wide reuse and make Federal open source code easier to find.
+Section [7.2](/policy-guide/implementation#72codeinventoriesanddiscovery) and [7.3](/policy-guide/implementation#73codegov) of the Source Code Policy require agencies to provide an inventory of their 'custom-developed code' to support government-wide reuse and make Federal open source code easier to find.
 
 Using these inventories, [Code.gov](https://Code.gov) will provide a platform to search federally funded open source software and software available for government-wide reuse.
 
