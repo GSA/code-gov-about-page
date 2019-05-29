@@ -1,6 +1,6 @@
 # How OMB Will Assess Agency Progress
 
-[Section 7.7](#accountability-mechanisms) of the Federal Source Code Policy states that:
+[Section 7.7](/policy-guide/implementation#77accountabilitymechanisms) of the Federal Source Code Policy states that:
 
 > Progress on agency implementation of this policy will be primarily assessed by OMB through an analysis of each agency’s internal Government repositories, public OSS repositories, and code inventories on Code.gov, as well as data obtained through the quarterly Integrated Data Collection (IDC), quarterly PortfolioStat sessions, the IT Dashboard, and additional mechanisms \[..\]
 

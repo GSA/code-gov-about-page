@@ -4,7 +4,7 @@
 
 The open source practice for the U.S. government is expected to rapidly evolve and become more sophisticated over the next several years, so the advice provided here will also evolve.
 
-In addition to the requirements outline in [Section 5](https://code.gov/policy-guide/open-source) of the policy, [Section 7.1](#roles-and-responsibilities) of the policy discusses roles and responsibilities within agencies in meeting the requirements of the policy. Regarding the Open Source Pilot Program specifically, it notes that:
+In addition to the requirements outline in [Section 5](https://code.gov/policy-guide/open-source) of the policy, [Section 7.1](/policy-guide/implementation#71rolesandresponsibilities) of the policy discusses roles and responsibilities within agencies in meeting the requirements of the policy. Regarding the Open Source Pilot Program specifically, it notes that:
 
 > Agencies should strengthen internal capacity to efficiently and securely deliver OSS as part of regular operations.
 
@@ -16,7 +16,7 @@ Agencies and teams that have been most successful in establishing their open sou
 
 ## Open Source is an interdisciplinary practice
 
-[Section 7.1](#roles-and-responsibilities) of the policy provides a long (and non-exhaustive) list of individuals and teams who have a role in your agency's open source practice:
+[Section 7.1](/policy-guide/implementation#71rolesandresponsibilities) of the policy provides a long (and non-exhaustive) list of individuals and teams who have a role in your agency's open source practice:
 
 > [..] agency heads must ensure that CIOs and Senior Agency Officials,including CAOs, are positioned with the responsibility and authority necessary to implement the requirements of this policy. As appropriate, Senior Agency Officials should also work with the agency’s public affairs staff, open government staff, web manager or digital strategist, program owners, and other leadership to properly identify, publish, and collaborate with communities on their OSS projects.
 
