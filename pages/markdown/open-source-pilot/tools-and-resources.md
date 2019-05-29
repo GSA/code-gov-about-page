@@ -1,6 +1,6 @@
 # Tools and Resources
 
-[Section 7.4](#code-repositories) of the Federal Source Code Policy states:
+[Section 7.4](/policy-guide/implementation#74coderepositories) of the Federal Source Code Policy states:
 
 > Accessible, buildable, version-controlled repositories for the storage, discussion, and modification of custom-developed code are critical to both the Government-wide reuse and OSS pilot program sections of this policy. Agencies should utilize existing code repositories and common third-party repository platforms as necessary in order to satisfy the requirements of this policy.
 
