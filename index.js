@@ -196,13 +196,15 @@ class JSONValidator extends React.Component {
     return (
       <Fragment>
         <h1>Code.json Validator</h1>
-        <p>Please enter your code.json file below in order to validate it correctly meets the specification.</p>
-        <json-schema-validator
-          ajv={PUBLIC_PATH + 'external/ajv.min.js'}
-          jsoneditor={PUBLIC_PATH + 'external/jsoneditor'}
-          metaschema={PUBLIC_PATH + 'assets/data/json-schema-draft-04.json'}
-          schema={PUBLIC_PATH + 'assets/data/schema.json'}
-        />
+        <label>
+          <p>Please enter your code.json file below in order to validate it correctly meets the specification.</p>
+          <json-schema-validator
+            ajv={PUBLIC_PATH + 'external/ajv.min.js'}
+            jsoneditor={PUBLIC_PATH + 'external/jsoneditor'}
+            metaschema={PUBLIC_PATH + 'assets/data/json-schema-draft-04.json'}
+            schema={PUBLIC_PATH + 'assets/data/schema.json'}
+          />
+        </label>
       </Fragment>
     )
   }
