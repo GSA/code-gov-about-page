@@ -1,3 +1,6 @@
+# DEPRECATED 
+## This project repo is no longer being maintained. The about page of code.gov is now configured directly in the [code-gov-front-end](https://github.com/GSA/code-gov-front-end) repo.
+
 # code-gov-about-page
 Component for the [About](https://code.gov/about/overview/introduction) page on code.gov.
 
